@@ -1,1 +1,0 @@
-The method prinln(Integer) is undefined for the type PrintStreamThe method prinln(Integer) is undefined for the type PrintStreamInteger number=Integer.valueOf(443);System.out.prinln(number);
