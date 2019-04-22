@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 
-import org.json.simple.JSONObject;
+import org.elasticsearch.search.SearchHits;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,12 +21,13 @@ public class InvestmentPlanHandlerTest {
 	InvestmentPlanHandler handler = mock(InvestmentPlanHandler.class);
 	
 	@Mock
-	private JSONObject mockResponse;
+	private SearchHits mockResponse;
 
 	@BeforeClass
 	public static void createInput() throws IOException {
 		input = new ERequest();
-		input.setPlanName("plan1");
+		input.setPlanName("NYCHSRO/MEDREVIEW, INC 401(K) PLAN");
+		input.setSponsorState("NY");
 
 	}
 
@@ -43,7 +44,8 @@ public class InvestmentPlanHandlerTest {
 		
 		when(handler.handleRequest(input, ctx)).thenReturn(mockResponse);
 
-		JSONObject output = handler.handleRequest(input, ctx);
+		SearchHits output = handler.handleRequest(input, ctx);
+//		System.out.println(output.totalHits);
 
 		Assert.assertEquals(output,mockResponse);
 	}

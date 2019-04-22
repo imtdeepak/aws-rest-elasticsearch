@@ -1,9 +1,9 @@
 package com.personalcapital.data.service;
 
-import org.json.simple.JSONObject;
+import org.elasticsearch.search.SearchHits;
 
 public interface InvestmentPlanDataService {
 
-	JSONObject getPlanResponse(String index, String planName, String sponsorName, String sponsorState);
+	SearchHits getPlanResponse(String index, String planName, String sponsorName, String sponsorState);
 
 }

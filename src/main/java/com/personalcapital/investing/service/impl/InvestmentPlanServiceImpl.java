@@ -1,6 +1,6 @@
 package com.personalcapital.investing.service.impl;
 
-import org.json.simple.JSONObject;
+import org.elasticsearch.search.SearchHits;
 
 import com.personalcapital.data.service.InvestmentPlanDataService;
 import com.personalcapital.data.service.impl.InvestmentPlanElasticSearchDataService;
@@ -12,8 +12,8 @@ public class InvestmentPlanServiceImpl implements InvestmentPlanService {
 	private InvestmentPlanDataService investmentPlanDataService = new InvestmentPlanElasticSearchDataService();
 	
 	@Override
-	public JSONObject getPlanResponse(String planName, String sponsorName, String sponsorState) {
-		JSONObject investmentPlans=investmentPlanDataService.getPlanResponse(ES_INDEX_NAME, planName,sponsorName,sponsorState);
+	public SearchHits getPlanResponse(String planName, String sponsorName, String sponsorState) {
+		SearchHits investmentPlans=investmentPlanDataService.getPlanResponse(ES_INDEX_NAME, planName,sponsorName,sponsorState);
 		return investmentPlans;
 	}
 	
