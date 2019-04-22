@@ -24,3 +24,16 @@ logstash -f logstash.config
 This process takes time and depends on csv file size and network speed.
 
 2. Now the data is loaded and we need to search this 
+For this I have created a Java Lambda and which is being invoked by Amazon API Gateway
+
+### Command to test this
+```
+curl -X POST \
+  https://blab4pa33l.execute-api.us-east-2.amazonaws.com/prod/plansponsorelastic \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 1fb66262-fa5a-4923-8b1f-55cf60bfb640' \
+  -H 'cache-control: no-cache' \
+  -d '{
+	"sponsorState":"NY"
+}'
+```
