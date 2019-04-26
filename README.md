@@ -24,7 +24,9 @@ logstash -f logstash.config
 This process takes time and depends on csv file size and network speed.
 
 2. Now the data is loaded and we need to search this 
-For this I have created a Java Lambda and which is being invoked by Amazon API Gateway
+For this I have created a Java Lambda and which is being invoked by Amazon API Gateway.
+
+For creating the lambda function I used the aws lambda plugin for eclipse which creates the basic project with the test framework with TestContext and TestUtils already created. 
 
 ### Command to test this
 ```
